@@ -22,7 +22,7 @@ type Plan struct{
 	Setup_fee 	 		float64			`json:"setup_fee,omitempty"`
 	Metadata 	 		interface{}		`json:"metadata,omitempty"`
 	Message 			string 			`json:"message,omitempty"`
-	Status 				int 			`json:"status,omitempty"`
+	Status 				string 			`json:"status,omitempty"`
 	Cause 				[]CauseE 		`json:"cause,omitempty"`  
 }
 
