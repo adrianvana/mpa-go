@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"errors"
 	"bytes"
-	// "log"
 	"net/http"
 	// "net/url"
 )
@@ -56,8 +55,6 @@ type Subscription struct {
 	Charges_detail 	 	ChargesDetail	`json:"charges_detail,omitempty"`
 	Setup_fee 			float64			`json:"setup_fee,omitempty"`
 	Message 			string 			`json:"message,omitempty"`
-	Status 				string 			`json:"status,omitempty"`
-	Cause 				[]CauseE 		`json:"cause,omitempty"`  
 }
 
 type Payer struct {
