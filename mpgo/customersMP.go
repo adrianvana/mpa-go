@@ -230,9 +230,9 @@ func (c ClientMP) AddNewCustomerCard(customer_id string, tokenCard string) (Cust
 		return customer, errors.New("Json decode error")
 	}
 
-	// if customer.Status != 0 {
-	// 	return customer, errors.New(customer.Cause[0].Description)
-	// }
+	if customer.Message != "" {
+		return customer, errors.New(customer.Message)
+	}
 
 	return customer, err
 
