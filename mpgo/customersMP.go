@@ -16,6 +16,7 @@ type Customer struct {
 	Last_name 	 		string			`json:"last_name,omitempty"`
 	Phone 				Phone			`json:"phone,omitempty"`
 	Identification 	 	Identification	`json:"identification,omitempty"`
+	Token 				string 			`json:"token,omitempty"`
 	Default_address 	string			`json:"default_address,omitempty"`
 	Address 	 		Address			`json:"address,omitempty"`
 	Date_registered 	string			`json:"date_registered,omitempty"`
