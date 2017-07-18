@@ -156,6 +156,10 @@ func (c ClientMP) NewSubscription(plan_id, customer_id string) (Subscription, er
 		return subscription, err
 	}
 
+	if subscription.Message != "" {
+		return subscription, errors.New(subscription.Message)
+	}
+
 	return subscription, nil
 
 }
