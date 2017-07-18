@@ -131,7 +131,7 @@ func (c ClientMP) NewSubscription(plan_id, customer_id string) (Subscription, er
 
 	subscription := Subscription{}
 
-	url := urlBase + "v1/subscriptions?access_token=" + c.Access_token
+	url := urlBase + "subscriptions?access_token=" + c.Access_token
 
 	b := new(bytes.Buffer)
 	json.NewEncoder(b).Encode(newSubscription)
