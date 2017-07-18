@@ -122,14 +122,12 @@ func (c ClientMP) NewSubscription(plan_id, customer_id string) (Subscription, er
 	type NewSubscription struct {
 		Plan_id 		string 					`json:"plan_id"`
 		Payer 			NewPayer 				`json:"payer"`
-		Status 			string 					`json:"status"`
 		Description 	string 					`json:"description"` 
 	}
 
 	newSubscription := NewSubscription{ 
 		Plan_id: plan_id,
 		Payer: NewPayer{ Id : customer_id, },
-		Status: "authorized",
 		Description: "Start of subscription",
 	}
 
