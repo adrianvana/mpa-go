@@ -131,7 +131,7 @@ func (c ClientMP) NewSubscription(plan_id, customer_id string) (Subscription, er
 
 	subscription := Subscription{}
 
-	url := urlBase + "subscriptions?access_token=" + c.Access_token
+	url := "https://api.mercadopago.com.mx/subscriptions?access_token=" + c.Access_token
 
 	b := new(bytes.Buffer)
 	json.NewEncoder(b).Encode(newSubscription)
