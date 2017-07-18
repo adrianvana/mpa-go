@@ -120,18 +120,22 @@ func (c ClientMP) NewSubscription(plan_id, customer_id string) (Subscription, er
 		Id string `json:"id"`
 	}
 	type NewSubscription struct {
-		Plan_id string 					`json:"plan_id"`
-		Payer 	NewPayer 				`json:"payer"`
+		Plan_id 		string 					`json:"plan_id"`
+		Payer 			NewPayer 				`json:"payer"`
+		Status 			string 					`json:"status"`
+		Description 	string 					`json:"description"` 
 	}
 
 	newSubscription := NewSubscription{ 
 		Plan_id: plan_id,
 		Payer: NewPayer{ Id : customer_id, },
+		Status: "authorized",
+		Description: "Start of subscription",
 	}
 
 	subscription := Subscription{}
 
-	url := "https://api.mercadopago.com.mx/subscriptions?access_token=" + c.Access_token
+	url := urlBase + "/v1/subscriptions?access_token=" + c.Access_token
 
 	b := new(bytes.Buffer)
 	json.NewEncoder(b).Encode(newSubscription)
